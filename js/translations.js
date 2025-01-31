@@ -17,7 +17,7 @@ const translations = {
         quote: "\"人生就是一次梯度下降\"",
         about: "[关于]",
         position: "量化开发工程师 @银河德睿",
-        education: "计算机科学和应用数学专业 @布兰戴斯21届",
+        education: "计算机科学和应用数学专业 @布兰戴斯大学21届",
         connect: "[联系]",
         platform: "所有平台 @jaceyang97",
         blog: "[文章]",
