@@ -6,7 +6,8 @@ const blogEntries = [
         translations: {
             en: "The Wedding",
             zh: "婚礼"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-07-03",
@@ -14,7 +15,8 @@ const blogEntries = [
         translations: {
             en: "Objective Function",
             zh: "目标函数"
-        }
+        },
+        languages: ["EN"]
     },
     {
         date: "2023-07-12",
@@ -22,7 +24,8 @@ const blogEntries = [
         translations: {
             en: "On \"A Personal Matter\"",
             zh: "关于《个人的体验》"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-08-05",
@@ -30,7 +33,8 @@ const blogEntries = [
         translations: {
             en: "The Vitality",
             zh: "生命力"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-09-23",
@@ -38,7 +42,8 @@ const blogEntries = [
         translations: {
             en: "Transcendentalism",
             zh: "超验主义"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-10-11",
@@ -46,7 +51,8 @@ const blogEntries = [
         translations: {
             en: "\"Lightness\" by Italo Calvino",
             zh: "卡尔维诺的《轻逸》"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-10-27",
@@ -54,7 +60,8 @@ const blogEntries = [
         translations: {
             en: "Loneliness",
             zh: "孤独"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-11-20",
@@ -62,7 +69,8 @@ const blogEntries = [
         translations: {
             en: "9 Lessons on a Birthday",
             zh: "生日九课"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-12-15",
@@ -70,7 +78,8 @@ const blogEntries = [
         translations: {
             en: "Why Jazz?",
             zh: "为什么爵士乐？"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2023-12-16",
@@ -78,7 +87,8 @@ const blogEntries = [
         translations: {
             en: "\"The Southern Thruway\" by Julio Cortázar",
             zh: "胡里奥·科塔萨尔的《南方高速》"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2024-01-08",
@@ -86,7 +96,8 @@ const blogEntries = [
         translations: {
             en: "A Moment of Our Lives",
             zh: "生命中的片刻"
-        }
+        },
+        languages: ["EN"]
     },
     {
         date: "2024-02-15",
@@ -94,7 +105,8 @@ const blogEntries = [
         translations: {
             en: "In the Blink of an Eye",
             zh: "眨眼之间"
-        }
+        },
+        languages: ["EN"]
     },
     {
         date: "2024-02-23",
@@ -102,7 +114,8 @@ const blogEntries = [
         translations: {
             en: "Balatro's Unbeatable Ante",
             zh: "小丑牌无法战胜的分数机制"
-        }
+        },
+        languages: ["EN", "CN"]
     },
     {
         date: "2024-03-27",
@@ -110,7 +123,8 @@ const blogEntries = [
         translations: {
             en: "Disruptive Forces",
             zh: "颠覆性力量"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2024-04-08",
@@ -118,7 +132,8 @@ const blogEntries = [
         translations: {
             en: "The Lack of Depth in Perspective",
             zh: "视角深度的缺失"
-        }
+        },
+        languages: ["CN"]
     },
     {
         date: "2024-04-19",
@@ -126,6 +141,7 @@ const blogEntries = [
         translations: {
             en: "On \"Poor Charlie's Almanack\"",
             zh: "关于《穷查理宝典》"
-        }
+        },
+        languages: ["CN"]
     }
 ]; 
