@@ -3,17 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
     const PADDING = 1;  // Padding from canvas edges
 
-    // Retrieve CSS colors from the root
-    const styles = getComputedStyle(document.documentElement);
-    const offWhite = styles.getPropertyValue('--color-off-white').trim();
-    const accent2 = styles.getPropertyValue('--color-accent-2').trim();
-    
     // Configuration for the loss curve and its animation
     const config = {
         duration: 1500,       // Animation duration in milliseconds
         decayRate: 5,         // Controls steepness of decay
-        steps: 150,           // Number of points making up the curve
-        noiseAmplitude: 150,  // Maximum noise added (fading out as u → 1)
+        steps: 100,           // Number of points making up the curve
+        noiseAmplitude: 75,  // Maximum noise added (fading out as u → 1)
         noiseDecay: 3         // Controls the rate at which noise decays
     };
     
@@ -35,12 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animation variable
     let startTime = null;
 
-    // Animate the loss curve drawing over time
+    // Animate the loss curve drawing over time.
+    // On each frame, we re-read the CSS variables so that any theme change is picked up.
     function animateLine(timestamp) {
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / config.duration, 1);
+        
+        // Retrieve CSS colors from the <body> to pick up theme changes.
+        const styles = getComputedStyle(document.body);
+        const offWhite = styles.getPropertyValue('--color-off-white').trim();
+        const accent2 = styles.getPropertyValue('--color-accent-1').trim();
+        // Retrieve computed style from an element that uses the desired font, e.g., .info
+        const infoFont = getComputedStyle(document.querySelector('.info')).font;
 
-        // Clear the canvas for redrawing
+        // Clear the canvas for redrawing.
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         // Set up a transformed coordinate system:
@@ -49,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.translate(PADDING, canvas.height - PADDING);
         ctx.scale(1, -1);
         
-        // Draw static axes: x-axis and y-axis
+        // Draw static axes (x-axis and y-axis).
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.lineTo(xAxisRight, 0);
@@ -74,17 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         ctx.restore();
         
-        // Draw axis labels in the default coordinate system.
         ctx.fillStyle = offWhite;
-        ctx.font = '30px Arial';
-        ctx.fillText('Life', canvas.width - 50, canvas.height - 15);
-        ctx.fillText('Entropy', 15, 25);
+        ctx.font = infoFont;
+        ctx.fillText('Entropy', 15, 15);
+        ctx.fillText('Life', canvas.width - 45, canvas.height - 15);
         
         if (progress < 1) {
             requestAnimationFrame(animateLine);
         }
     }
     
-    // Start the animation
+    // Expose a function so that the loss chart can be redrawn (replaying the animation)
+    // when the theme is changed.
+    window.redrawLossChart = function() {
+        startTime = null;
+        requestAnimationFrame(animateLine);
+    };
+
+    // Start the animation initially.
     requestAnimationFrame(animateLine);
 });
