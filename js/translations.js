@@ -9,7 +9,8 @@ const translations = {
         connect: "[Connect]",
         platform: "@jaceyang97 on every platform",
         blog: "[Blog]",
-        construction: "This site is under construction"
+        construction: "This site is under construction",
+        artwork: "[Artwork]"
     },
     zh: {
         title: "杨泽群",
@@ -21,6 +22,7 @@ const translations = {
         connect: "[联系]",
         platform: "所有平台 @jaceyang97",
         blog: "[文章]",
-        construction: "网站正在建设中"
+        construction: "网站正在建设中",
+        artwork: "[作品]"
     }
 }; 
