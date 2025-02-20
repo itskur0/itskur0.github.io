@@ -15,4 +15,5 @@ const artworks = [
     'p21.png',
     'p22.png',
     'p24.png',
+    'p25.png',
 ]; 
